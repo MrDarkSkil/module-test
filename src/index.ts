@@ -14,7 +14,6 @@ export default class {
 
     constructor(private container: any) {
         console.log('Construtor');
-        console.log(container);
     }
 
     init() {
@@ -27,7 +26,6 @@ export default class {
                 this.data.body = date.getHours() + ' : ' + date.getMinutes() + ' : ' + date.getSeconds()
             }, 500);
         }, 1000);
-
     }
 
     start() {
