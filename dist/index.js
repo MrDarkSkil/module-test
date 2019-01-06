@@ -1,1 +1,101 @@
-!function(t,e){for(var n in e)t[n]=e[n]}(exports,function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=0)}([function(t,e,n){"use strict";n.r(e);var r=function(){function t(t){this.container=t,this.name="test",this.type="game",this.requireVersion="0.0.1",this.showOnStart=!0,this.template=n(1),this.data={title:"Chargement...",body:"00 : 00 : 00"},console.log("Construtor")}return t.prototype.init=function(){var t=this;console.log("MODULE DEV LOADED"),setInterval(function(){var e=new Date;t.data.body=e.getHours()+" - "+e.getMinutes()+" - "+e.getSeconds(),setTimeout(function(){var e=new Date;t.data.body=e.getHours()+" : "+e.getMinutes()+" : "+e.getSeconds()},500)},1e3)},t.prototype.start=function(){var t=this;console.log("MODULE STARTED"),this.container.get("UserService").get().then(function(e){t.data.title="L'horloge de - "+e.name})},t}();e.default=r},function(t,e){t.exports='<div>\n    <div class="card" data-v-v1n8lv76u >\n       {{title}}\n       \n       <br>\n        {{body}}\n    </div>\n</div>\n\n<style>\n    .card[data-v-v1n8lv76u] {\n        color: white;\n        padding: 10px;\n        height: 150px;\n        background-color: pink;\n        border-radius: 5px;\n    }\n</style>'}]));
+(function(e, a) { for(var i in a) e[i] = a[i]; }(exports, /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.ts");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/index.ts":
+/*!**********************!*\
+  !*** ./src/index.ts ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar Test = /** @class */ (function () {\n    function Test(elios) {\n        this.elios = elios;\n        this.name = 'test';\n        this.requireVersion = '0.0.1';\n        this.showOnStart = true;\n        this.widget = elios.createWidget({});\n    }\n    Test.prototype.init = function () {\n        console.log('MODULE DEV LOADED ' + this.name);\n    };\n    Test.prototype.start = function () {\n        var _this = this;\n        console.log('MODULE STARTED ' + this.name);\n        var i = 0;\n        this.it = setInterval(function () {\n            _this.widget.html.next(\"<div>\\n            <div class=\\\"card\\\" >\\n               Hello form module-test ! :)\\n\\n                <br>\\n                    \" + i + \"\\n                </div>\\n            </div>\\n            \\n            <style>\\n                .card {\\n                    color: white;\\n                    padding: 10px;\\n                    height: 150px;\\n                    background-color: goldenrod;\\n                    border-radius: 5px;\\n                }\\n            </style>\");\n            i++;\n        }, 1000);\n    };\n    Test.prototype.stop = function () {\n        clearInterval(this.it);\n        console.log('MODULE STOPED ' + this.name);\n    };\n    return Test;\n}());\n/* harmony default export */ __webpack_exports__[\"default\"] = (Test);\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+
+/***/ })
+
+/******/ })));

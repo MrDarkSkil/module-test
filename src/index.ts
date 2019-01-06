@@ -1,39 +1,57 @@
-export default class {
+import { Module, Controller } from 'elios-sdk'
+
+export default class Test implements Module {
     name: string = 'test';
 
-    type: string = 'game';
     requireVersion: string = '0.0.1';
     showOnStart: boolean = true;
 
-    template: any = require("./index.html");
+    widget: any;
+    it: any;
 
-    data: any = {
-        title: 'Chargement...',
-        body: '00 : 00 : 00'
-    };
+    constructor(private elios: Controller) {
+        this.widget = elios.createWidget({
 
-    constructor(private container: any) {
-        console.log('Construtor');
+        });
     }
 
     init() {
-        console.log('MODULE DEV LOADED');
-        setInterval(() => {
-            const date = new Date();
-            this.data.body = date.getHours() + ' - ' + date.getMinutes() + ' - ' + date.getSeconds()
-            setTimeout(() => {
-                const date = new Date();
-                this.data.body = date.getHours() + ' : ' + date.getMinutes() + ' : ' + date.getSeconds()
-            }, 500);
-        }, 1000);
+        console.log('MODULE DEV LOADED ' + this.name);
     }
 
     start() {
-        console.log('MODULE STARTED');
+        console.log('MODULE STARTED ' + this.name);
 
-        const userService = this.container.get('UserService');
-        userService.get().then((res: any) => {
-            this.data.title = `L'horloge de - ${res.name}`;
-        })
+        let i = 0;
+
+        this.it = setInterval(() => {
+            this.widget.html.next(`<div>
+            <div class="card" >
+               Hello form module-test ! :)
+
+                <br>
+                    ${i}
+                </div>
+            </div>
+            
+            <style>
+                .card {
+                    color: white;
+                    padding: 10px;
+                    height: 150px;
+                    background-color: goldenrod;
+                    border-radius: 5px;
+                }
+            </style>`
+            );
+
+            i++;
+        }, 1000);
+
+    }
+
+    stop() {
+        clearInterval(this.it);
+        console.log('MODULE STOPED ' + this.name);
     }
 }
