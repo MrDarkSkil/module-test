@@ -38,7 +38,11 @@ export default class Test implements Module {
                 .card {
                     color: white;
                     padding: 10px;
-                    height: 150px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left:  0;
+                    bottom: 0;
                     background-color: orange;
                     border-radius: 5px;
                 }
