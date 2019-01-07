@@ -9,10 +9,7 @@ export default class Test implements Module {
     widget: any;
     it: any;
 
-    constructor(private elios: Controller) {
-        this.widget = elios.createWidget({
-
-        });
+    constructor(private elios: Controller) {    
     }
 
     init() {
@@ -21,6 +18,9 @@ export default class Test implements Module {
 
     start() {
         console.log('MODULE STARTED ' + this.name);
+
+        this.widget = this.elios.createWidget({
+        });
 
         let i = 0;
 
