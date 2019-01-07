@@ -39,7 +39,7 @@ export default class Test implements Module {
                     color: white;
                     padding: 10px;
                     height: 150px;
-                    background-color: goldenrod;
+                    background-color: orange;
                     border-radius: 5px;
                 }
             </style>`
