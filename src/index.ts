@@ -3,6 +3,8 @@ import { Module, Controller } from 'elios-sdk'
 export default class Test implements Module {
     name: string = 'test';
 
+    installId: string = '';
+
     requireVersion: string = '0.0.1';
     showOnStart: boolean = true;
 
@@ -20,6 +22,7 @@ export default class Test implements Module {
         console.log('MODULE STARTED ' + this.name);
 
         this.widget = this.elios.createWidget({
+            id: this.installId
         });
 
         let i = 0;
